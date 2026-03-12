@@ -20,32 +20,19 @@ const projectsData = [
   { img: p6, titleEn: 'Solar Grid Station', titleAr: 'محطة الشبكة الشمسية', descEn: 'Renewable energy', descAr: 'طاقة متجددة' },
 ];
 
-const ProjectsSection = ({ onBack }: { onBack: () => void }) => {
-  const { lang } = useLanguage();
-  const { t } = useLanguage();
+const ProjectsSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate: (s: string) => void }) => {
+  const { lang, t } = useLanguage();
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <SectionPanel backgroundImage={sectionBg} onBack={onBack}>
+    <SectionPanel backgroundImage={sectionBg} onBack={onBack} onNavigate={onNavigate}>
       <div className="max-w-6xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-foreground mb-12"
-        >
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-foreground mb-12">
           {t('projects')}
         </motion.h1>
         <div className="columns-1 md:columns-2 lg:columns-3 gap-4 space-y-4">
           {projectsData.map((p, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }}
-              className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded"
-              onClick={() => setLightbox(i)}
-            >
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3 + i * 0.08 }} className="break-inside-avoid group cursor-pointer relative overflow-hidden rounded" onClick={() => setLightbox(i)}>
               <img src={p.img} alt={lang === 'ar' ? p.titleAr : p.titleEn} className="w-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                 <h3 className="text-foreground font-heading font-semibold">{lang === 'ar' ? p.titleAr : p.titleEn}</h3>
@@ -55,27 +42,11 @@ const ProjectsSection = ({ onBack }: { onBack: () => void }) => {
           ))}
         </div>
       </div>
-
       <AnimatePresence>
         {lightbox !== null && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background/95 flex items-center justify-center p-8"
-            onClick={() => setLightbox(null)}
-          >
-            <button className="absolute top-6 right-6 text-muted-foreground hover:text-foreground" onClick={() => setLightbox(null)}>
-              <X size={28} />
-            </button>
-            <motion.img
-              initial={{ scale: 0.9 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.9 }}
-              src={projectsData[lightbox].img}
-              alt=""
-              className="max-w-full max-h-[80vh] object-contain rounded"
-            />
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[60] bg-background/95 flex items-center justify-center p-8" onClick={() => setLightbox(null)}>
+            <button className="absolute top-6 right-6 text-muted-foreground hover:text-foreground" onClick={() => setLightbox(null)}><X size={28} /></button>
+            <motion.img initial={{ scale: 0.9 }} animate={{ scale: 1 }} exit={{ scale: 0.9 }} src={projectsData[lightbox].img} alt="" className="max-w-full max-h-[80vh] object-contain rounded" />
           </motion.div>
         )}
       </AnimatePresence>

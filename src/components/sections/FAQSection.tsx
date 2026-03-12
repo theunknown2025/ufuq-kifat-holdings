@@ -11,25 +11,16 @@ const faqData = [
   { qEn: 'What industries do you serve?', qAr: 'ما هي القطاعات التي تخدمونها؟', aEn: 'We serve transportation, energy, water, commercial, residential, and industrial sectors with specialized engineering solutions.', aAr: 'نخدم قطاعات النقل والطاقة والمياه والتجارة والسكن والصناعة بحلول هندسية متخصصة.' },
 ];
 
-const FAQSection = ({ onBack }: { onBack: () => void }) => {
+const FAQSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate: (s: string) => void }) => {
   const { t, lang } = useLanguage();
 
   return (
-    <SectionPanel backgroundImage={sectionBg} onBack={onBack}>
+    <SectionPanel backgroundImage={sectionBg} onBack={onBack} onNavigate={onNavigate}>
       <div className="max-w-3xl mx-auto">
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-foreground mb-12"
-        >
+        <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="text-4xl md:text-6xl font-heading font-bold tracking-tight text-foreground mb-12">
           {t('faq')}
         </motion.h1>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }}>
           <Accordion type="single" collapsible className="space-y-3">
             {faqData.map((item, i) => (
               <AccordionItem key={i} value={`faq-${i}`} className="border border-border rounded bg-card/50 backdrop-blur-sm px-6 gold-border-glow">

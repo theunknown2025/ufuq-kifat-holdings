@@ -14,17 +14,19 @@ const Index = () => {
 
   const handleBack = () => setActiveSection(null);
 
+  const sectionProps = { onBack: handleBack, onNavigate: setActiveSection };
+
   return (
     <div className="h-screen w-screen overflow-hidden">
       <HeroSection onNavigate={setActiveSection} />
       <AnimatePresence mode="wait">
-        {activeSection === 'about' && <AboutSection key="about" onBack={handleBack} />}
-        {activeSection === 'services' && <ServicesSection key="services" onBack={handleBack} />}
-        {activeSection === 'whyUs' && <WhyUsSection key="whyUs" onBack={handleBack} />}
-        {activeSection === 'vision' && <VisionSection key="vision" onBack={handleBack} />}
-        {activeSection === 'projects' && <ProjectsSection key="projects" onBack={handleBack} />}
-        {activeSection === 'faq' && <FAQSection key="faq" onBack={handleBack} />}
-        {activeSection === 'contact' && <ContactSection key="contact" onBack={handleBack} />}
+        {activeSection === 'about' && <AboutSection key="about" {...sectionProps} />}
+        {activeSection === 'services' && <ServicesSection key="services" {...sectionProps} />}
+        {activeSection === 'whyUs' && <WhyUsSection key="whyUs" {...sectionProps} />}
+        {activeSection === 'vision' && <VisionSection key="vision" {...sectionProps} />}
+        {activeSection === 'projects' && <ProjectsSection key="projects" {...sectionProps} />}
+        {activeSection === 'faq' && <FAQSection key="faq" {...sectionProps} />}
+        {activeSection === 'contact' && <ContactSection key="contact" {...sectionProps} />}
       </AnimatePresence>
     </div>
   );
