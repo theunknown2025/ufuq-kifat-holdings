@@ -31,7 +31,7 @@ const SectionPanel = ({ backgroundImage, onBack, onNavigate, children }: Section
       {/* Left nav (desktop) */}
       <div className="hidden md:flex flex-col justify-between relative z-10 w-64 py-10 shrink-0">
         <div className="flex-1 flex flex-col justify-center pl-8 rtl:pl-0 rtl:pr-8">
-          <VerticalNavigation onNavigate={onNavigate} activeSection="" />
+          <VerticalNavigation onNavigate={onNavigate} />
         </div>
         <div className="flex justify-center pb-2">
           <LanguageSwitcher />
