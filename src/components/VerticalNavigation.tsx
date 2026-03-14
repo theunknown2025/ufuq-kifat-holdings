@@ -3,6 +3,8 @@ import { useLanguage } from '@/contexts/LanguageContext';
 
 interface VerticalNavigationProps {
   onNavigate: (section: string) => void;
+  /** When true, shows Home as first item (for use inside section panels) */
+  showHome?: boolean;
 }
 
 const navItems = [
@@ -15,8 +17,10 @@ const navItems = [
   { key: 'contact', label: 'contact' },
 ];
 
-const VerticalNavigation = ({ onNavigate }: VerticalNavigationProps) => {
+const VerticalNavigation = ({ onNavigate, showHome = false }: VerticalNavigationProps) => {
   const { t } = useLanguage();
+
+  const items = showHome ? [{ key: 'home', label: 'home' }, ...navItems] : navItems;
 
   return (
     <motion.nav
@@ -26,7 +30,7 @@ const VerticalNavigation = ({ onNavigate }: VerticalNavigationProps) => {
       className="flex flex-col gap-1 relative"
     >
       <div className="gold-line-vertical absolute left-0 rtl:left-auto rtl:right-0 top-0 h-full opacity-30" />
-      {navItems.map((item, i) => (
+      {items.map((item, i) => (
         <motion.button
           key={item.key}
           initial={{ opacity: 0, x: -20 }}

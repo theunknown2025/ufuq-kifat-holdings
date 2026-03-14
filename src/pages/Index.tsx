@@ -14,12 +14,16 @@ const Index = () => {
 
   const handleBack = () => setActiveSection(null);
 
-  const sectionProps = { onBack: handleBack, onNavigate: setActiveSection };
+  const handleNavigate = (section: string) => {
+    setActiveSection(section === 'home' ? null : section);
+  };
+
+  const sectionProps = { onBack: handleBack, onNavigate: handleNavigate };
 
   return (
-    <div className="h-screen w-screen overflow-hidden">
-      <HeroSection onNavigate={setActiveSection} />
+    <div className="h-screen w-screen overflow-hidden bg-background">
       <AnimatePresence mode="wait">
+        {activeSection === null && <HeroSection key="home" onNavigate={handleNavigate} />}
         {activeSection === 'about' && <AboutSection key="about" {...sectionProps} />}
         {activeSection === 'services' && <ServicesSection key="services" {...sectionProps} />}
         {activeSection === 'whyUs' && <WhyUsSection key="whyUs" {...sectionProps} />}

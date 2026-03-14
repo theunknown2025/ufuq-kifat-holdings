@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B8862E"/>
+      <stop offset="50%" stop-color="#D4A84B"/>
+      <stop offset="100%" stop-color="#E8C547"/>
+    </linearGradient>
+  </defs>
+  <!-- Three ascending towers - growth and structure -->
+  <path fill="url(#gold)" d="M40 145 L40 70 L52 70 L52 145 Z"/>
+  <path fill="url(#gold)" d="M88 145 L88 45 L100 45 L100 145 Z"/>
+  <path fill="url(#gold)" d="M136 145 L136 70 L148 70 L148 145 Z"/>
+  <!-- Roof line - architectural peak -->
+  <path fill="none" stroke="url(#gold)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d="M46 70 L94 45 L142 70"/>
+  <!-- Foundation - solid base -->
+  <rect fill="white" opacity="0.9" x="35" y="145" width="130" height="8" rx="1"/>
+  <!-- Center accent - precision mark -->
+  <circle fill="white" opacity="0.9" cx="100" cy="72" r="4"/>
+</svg>

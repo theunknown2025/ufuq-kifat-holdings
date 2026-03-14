@@ -43,6 +43,7 @@ const translations: Translations = {
   valuesText: { en: 'Integrity, innovation, excellence, and commitment to our clients and communities.', ar: 'النزاهة والابتكار والتميز والالتزام تجاه عملائنا ومجتمعاتنا.' },
   processText: { en: 'A systematic approach from concept to completion, ensuring quality at every stage.', ar: 'نهج منظم من المفهوم إلى الإنجاز، يضمن الجودة في كل مرحلة.' },
   back: { en: 'Back', ar: 'رجوع' },
+  home: { en: 'Home', ar: 'الرئيسية' },
   name: { en: 'Name', ar: 'الاسم' },
   email: { en: 'Email', ar: 'البريد الإلكتروني' },
   message: { en: 'Message', ar: 'الرسالة' },

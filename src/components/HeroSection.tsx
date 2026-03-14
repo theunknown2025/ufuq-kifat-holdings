@@ -36,9 +36,9 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
       />
 
       {/* Content grid */}
-      <div className="relative z-10 h-full flex">
+      <div className="relative z-10 h-full flex rtl:flex-row-reverse">
         {/* Left: Navigation */}
-        <div className="hidden md:flex flex-col justify-center w-64 pl-8 rtl:pl-0 rtl:pr-8">
+        <div className="hidden md:flex flex-col justify-center w-64 pl-8 rtl:pl-0 rtl:pr-8 shrink-0">
           <VerticalNavigation onNavigate={onNavigate} />
         </div>
 
@@ -48,7 +48,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         </div>
 
         {/* Center: Hero content */}
-        <div className="flex-1 flex flex-col justify-center px-8 md:px-16">
+        <div className="flex-1 flex flex-col justify-center px-8 md:px-16 min-w-0">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -87,7 +87,27 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
             </motion.p>
           </motion.div>
         </div>
+
+        {/* Right: Logo - big and visible */}
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="hidden md:flex flex-col justify-center items-center w-72 xl:w-80 pr-8 rtl:pr-0 rtl:pl-8 shrink-0"
+        >
+          <img src="/logo.png" alt="Ufuq Kifat" className="h-40 lg:h-52 xl:h-60 object-contain drop-shadow-lg" />
+        </motion.div>
       </div>
+
+      {/* Mobile: logo below content area */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-20"
+      >
+        <img src="/logo.png" alt="Ufuq Kifat" className="h-20 object-contain" />
+      </motion.div>
 
       {/* Bottom center: Language switcher */}
       <motion.div
