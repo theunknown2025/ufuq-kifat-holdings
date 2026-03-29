@@ -15,6 +15,7 @@ const translations: Translations = {
   whyUs: { en: 'Why Us', ar: 'لماذا نحن' },
   vision: { en: 'Vision', ar: 'رؤيتنا' },
   projects: { en: 'Projects', ar: 'مشاريعنا' },
+  projectsComingSoon: { en: 'Projects are coming soon. Stay tuned.', ar: 'المشاريع قريباً. ترقّبوا المزيد.' },
   faq: { en: 'FAQ', ar: 'الأسئلة الشائعة' },
   contact: { en: 'Contact Us', ar: 'تواصل معنا' },
   mission: { en: 'Mission', ar: 'المهمة' },

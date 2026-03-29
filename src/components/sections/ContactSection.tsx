@@ -47,7 +47,7 @@ const ContactSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate
               <div>
                 <h4 className="text-xs font-heading tracking-widest uppercase text-muted-foreground mb-1">{t('email')}</h4>
                 <p className="text-foreground">
-                  <a href="mailto:info@ufukgifatalmutahida.com" className="hover:text-primary transition-colors">
+                  <a href="mailto:info@ufugkifatalmutahida.com" className="hover:text-primary transition-colors">
                     info@ufukgifatalmutahida.com
                   </a>
                 </p>
