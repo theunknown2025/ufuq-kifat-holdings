@@ -2,7 +2,10 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SectionPanel from '@/components/SectionPanel';
 import sectionBg from '@/assets/section-contact.jpg';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+
+const WHATSAPP_E164 = '447429007272';
+const WHATSAPP_DISPLAY = '+447429007272';
 
 const ContactSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate: (s: string) => void }) => {
   const { t } = useLanguage();
@@ -36,14 +39,34 @@ const ContactSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate
               <Phone size={20} className="text-primary mt-1" />
               <div>
                 <h4 className="text-xs font-heading tracking-widest uppercase text-muted-foreground mb-1">{t('phone')}</h4>
-                <p className="text-foreground">+966 11 XXX XXXX</p>
+                <p className="text-foreground">+966 54 502 6624</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
               <Mail size={20} className="text-primary mt-1" />
               <div>
                 <h4 className="text-xs font-heading tracking-widest uppercase text-muted-foreground mb-1">{t('email')}</h4>
-                <p className="text-foreground">info@ufuqkifat.com</p>
+                <p className="text-foreground">
+                  <a href="mailto:info@ufukgifatalmutahida.com" className="hover:text-primary transition-colors">
+                    info@ufukgifatalmutahida.com
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div className="flex items-start gap-4">
+              <MessageCircle size={20} className="text-primary mt-1" />
+              <div>
+                <h4 className="text-xs font-heading tracking-widest uppercase text-muted-foreground mb-1">{t('whatsapp')}</h4>
+                <p className="text-foreground">
+                  <a
+                    href={`https://wa.me/${WHATSAPP_E164}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary transition-colors"
+                  >
+                    {WHATSAPP_DISPLAY}
+                  </a>
+                </p>
               </div>
             </div>
             <div className="flex items-start gap-4">

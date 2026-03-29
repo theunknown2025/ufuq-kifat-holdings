@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import VerticalNavigation from './VerticalNavigation';
 import LanguageSwitcher from './LanguageSwitcher';
-import heroBg from '@/assets/hero-bridge.jpg';
+const HERO_BG_URL = '/hero-canopy.png';
 
 interface HeroSectionProps {
   onNavigate: (section: string) => void;
@@ -12,7 +12,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
   const { t } = useLanguage();
 
   return (
-    <div className="relative h-screen w-screen overflow-hidden">
+    <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* Background */}
       <motion.div
         initial={{ scale: 1.1 }}
@@ -20,7 +20,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         transition={{ duration: 2, ease: 'easeOut' }}
         className="absolute inset-0"
       >
-        <img src={heroBg} alt="Engineering infrastructure" className="w-full h-full object-cover" />
+        <img src={HERO_BG_URL} alt="" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* Overlay */}
@@ -95,7 +95,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           transition={{ duration: 1, delay: 0.5 }}
           className="hidden md:flex flex-col justify-center items-center w-72 xl:w-80 pr-8 rtl:pr-0 rtl:pl-8 shrink-0"
         >
-          <img src="/logo.png" alt="Ufuq Kifat" className="h-40 lg:h-52 xl:h-60 object-contain drop-shadow-lg" />
+          <img src="/logo.png" alt="UFUG Kifat" className="h-40 lg:h-52 xl:h-60 object-contain drop-shadow-lg" />
         </motion.div>
       </div>
 
@@ -106,7 +106,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-20"
       >
-        <img src="/logo.png" alt="Ufuq Kifat" className="h-20 object-contain" />
+        <img src="/logo.png" alt="UFUG Kifat" className="h-20 object-contain" />
       </motion.div>
 
       {/* Bottom center: Language switcher */}
@@ -152,20 +152,25 @@ const MobileNav = ({ onNavigate }: { onNavigate: (s: string) => void }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-background/98 flex flex-col items-center justify-center gap-6"
+            className="fixed inset-0 z-50"
           >
-            <button onClick={() => setOpen(false)} className="absolute top-6 right-6 text-foreground">
-              <X size={24} />
-            </button>
-            {items.map((item) => (
-              <button
-                key={item}
-                onClick={() => { setOpen(false); onNavigate(item); }}
-                className="text-2xl font-heading font-semibold text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
-              >
-                {t(item)}
+            {/* Dim background + frosted glass panel */}
+            <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+
+            <div className="relative mx-auto w-[92%] max-w-md rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-8 flex flex-col items-center justify-center gap-6">
+              <button onClick={() => setOpen(false)} className="absolute top-6 right-6 text-foreground">
+                <X size={24} />
               </button>
-            ))}
+              {items.map((item) => (
+                <button
+                  key={item}
+                  onClick={() => { setOpen(false); onNavigate(item); }}
+                  className="text-2xl font-heading font-semibold text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
+                >
+                  {t(item)}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

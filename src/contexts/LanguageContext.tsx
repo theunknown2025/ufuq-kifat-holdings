@@ -7,7 +7,7 @@ interface Translations {
 }
 
 const translations: Translations = {
-  companyName: { en: 'Ufuq Kifat Almutahida', ar: 'أفق كفات المتحدة' },
+  companyName: { en: 'UFUG Kifat Almutahida', ar: 'أفق كفات المتحدة' },
   heroTitle: { en: 'Engineering Excellence for Sustainable Solutions', ar: 'التميز الهندسي لحلول مستدامة' },
   heroSub: { en: 'Delivering integrated engineering solutions that combine precision, efficiency, and innovation.', ar: 'تقديم حلول هندسية متكاملة تجمع بين الدقة والكفاءة والابتكار.' },
   about: { en: 'About Us', ar: 'نبذة عنا' },
@@ -21,7 +21,7 @@ const translations: Translations = {
   values: { en: 'Values', ar: 'القيم' },
   process: { en: 'Process', ar: 'العملية' },
   aboutTitle: { en: 'About Us', ar: 'نبذة تعريفية' },
-  aboutText: { en: 'Ufuq Kifat is a leading engineering company committed to delivering innovative and sustainable engineering solutions for our clients. We are distinguished by a team of specialized engineers with extensive experience and advanced technical capabilities, enabling us to provide integrated, high-quality engineering services across various sectors.', ar: 'أفق كفات هي شركة رائدة في مجال الهندسة، ملتزمة بتقديم حلول هندسية مبتكرة ومستدامة لعملائنا. نتميز بفريق من المهندسين المتخصصين ذوي الخبرة الواسعة والقدرات التقنية المتقدمة، مما يمكننا من تقديم خدمات هندسية متكاملة وعالية الجودة عبر مختلف القطاعات.' },
+  aboutText: { en: 'UFUG Kifat is a leading Saudi Arabian engineering company committed to delivering innovative and sustainable engineering solutions for our clients. We are distinguished by a team of specialized engineers with extensive experience and advanced technical capabilities, enabling us to provide integrated, high-quality engineering services across various sectors.', ar: 'أفق كفات هي شركة رائدة في مجال الهندسة، ملتزمة بتقديم حلول هندسية مبتكرة ومستدامة لعملائنا. نتميز بفريق من المهندسين المتخصصين ذوي الخبرة الواسعة والقدرات التقنية المتقدمة، مما يمكننا من تقديم خدمات هندسية متكاملة وعالية الجودة عبر مختلف القطاعات.' },
   cost: { en: 'Cost', ar: 'التكلفة' },
   time: { en: 'Time', ar: 'الزمن' },
   quality: { en: 'Quality', ar: 'الجودة' },
@@ -33,11 +33,13 @@ const translations: Translations = {
   projMgmt: { en: 'Project Management', ar: 'إدارة المشاريع' },
   constSuper: { en: 'Construction Supervision', ar: 'الإشراف على البناء' },
   techStudies: { en: 'Technical Studies', ar: 'الدراسات الفنية' },
+  facilitiesMgmt: { en: 'Facilities Management', ar: 'إدارة المرافق' },
   engConsultingDesc: { en: 'Expert guidance for complex engineering challenges across all project phases.', ar: 'إرشاد خبير للتحديات الهندسية المعقدة عبر جميع مراحل المشروع.' },
   infraDesignDesc: { en: 'Comprehensive infrastructure planning and design for sustainable development.', ar: 'تخطيط وتصميم شامل للبنية التحتية من أجل التنمية المستدامة.' },
   projMgmtDesc: { en: 'End-to-end project management ensuring on-time, on-budget delivery.', ar: 'إدارة مشاريع شاملة تضمن التسليم في الوقت المحدد وضمن الميزانية.' },
   constSuperDesc: { en: 'On-site supervision ensuring quality standards and safety compliance.', ar: 'إشراف ميداني يضمن معايير الجودة والامتثال للسلامة.' },
   techStudiesDesc: { en: 'In-depth technical analysis and feasibility studies for informed decisions.', ar: 'تحليل فني معمق ودراسات جدوى لاتخاذ قرارات مستنيرة.' },
+  facilitiesMgmtDesc: { en: 'Operations and maintenance for buildings and infrastructure, ensuring safety, efficiency, and compliance.', ar: 'تشغيل وصيانة للمباني والبنية التحتية، مع ضمان السلامة والكفاءة والامتثال.' },
   missionText: { en: 'To deliver engineering excellence that transforms communities and builds lasting infrastructure.', ar: 'تقديم التميز الهندسي الذي يحوّل المجتمعات ويبني بنية تحتية دائمة.' },
   visionText: { en: 'To be the leading engineering firm in the region, recognized for innovation and sustainability.', ar: 'أن نكون الشركة الهندسية الرائدة في المنطقة، معروفة بالابتكار والاستدامة.' },
   valuesText: { en: 'Integrity, innovation, excellence, and commitment to our clients and communities.', ar: 'النزاهة والابتكار والتميز والالتزام تجاه عملائنا ومجتمعاتنا.' },
@@ -49,6 +51,7 @@ const translations: Translations = {
   message: { en: 'Message', ar: 'الرسالة' },
   send: { en: 'Send', ar: 'إرسال' },
   phone: { en: 'Phone', ar: 'الهاتف' },
+  whatsapp: { en: 'WhatsApp', ar: 'واتساب' },
   address: { en: 'Address', ar: 'العنوان' },
   addressVal: { en: 'Riyadh, Saudi Arabia', ar: 'الرياض، المملكة العربية السعودية' },
 };

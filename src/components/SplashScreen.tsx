@@ -51,7 +51,7 @@ const SplashScreen = ({ onComplete, duration = 2500 }: SplashScreenProps) => {
           >
             <motion.img
               src="/logo.png"
-              alt="Ufuq Kifat"
+              alt="UFUG Kifat"
               className="h-32 w-auto md:h-40 object-contain"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

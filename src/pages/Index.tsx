@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import HeroSection from '@/components/HeroSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import WhyUsSection from '@/components/sections/WhyUsSection';
@@ -8,6 +7,7 @@ import VisionSection from '@/components/sections/VisionSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ContactSection from '@/components/sections/ContactSection';
+import HomeSection from './HomeSection';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<string | null>(null);
@@ -21,9 +21,9 @@ const Index = () => {
   const sectionProps = { onBack: handleBack, onNavigate: handleNavigate };
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-background">
+    <div className="min-h-screen w-full overflow-x-hidden bg-background">
       <AnimatePresence mode="wait">
-        {activeSection === null && <HeroSection key="home" onNavigate={handleNavigate} />}
+        {activeSection === null && <HomeSection key="home" {...sectionProps} />}
         {activeSection === 'about' && <AboutSection key="about" {...sectionProps} />}
         {activeSection === 'services' && <ServicesSection key="services" {...sectionProps} />}
         {activeSection === 'whyUs' && <WhyUsSection key="whyUs" {...sectionProps} />}

@@ -49,7 +49,7 @@ const SectionPanel = ({ backgroundImage, onBack, onNavigate, children }: Section
         <div className="relative z-10 flex-1 overflow-y-auto px-6 md:px-16 lg:px-24 py-12 min-w-0 flex flex-col items-center">
           {/* Mobile: logo at top when desktop logo is hidden */}
           <div className="md:hidden flex justify-center mb-6">
-            <img src="/logo.png" alt="Ufuq Kifat" className="h-16 object-contain" />
+            <img src="/logo.png" alt="UFUG Kifat" className="h-16 object-contain" />
           </div>
           <div className="w-full">
             {children}
@@ -58,7 +58,7 @@ const SectionPanel = ({ backgroundImage, onBack, onNavigate, children }: Section
 
         {/* Right: Logo - big and visible, same as main section */}
         <div className="hidden md:flex flex-col justify-center items-center w-72 xl:w-80 py-10 pr-8 rtl:pr-0 rtl:pl-8 shrink-0">
-          <img src="/logo.png" alt="Ufuq Kifat" className="h-40 lg:h-52 xl:h-60 object-contain drop-shadow-lg" />
+          <img src="/logo.png" alt="UFUG Kifat" className="h-40 lg:h-52 xl:h-60 object-contain drop-shadow-lg" />
         </div>
       </div>
     </motion.div>
@@ -85,28 +85,37 @@ const MobileNavInSection = ({ onNavigate, onBack }: { onNavigate: (s: string) =>
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background/98 flex flex-col items-center justify-center gap-6"
+            className="fixed inset-0 z-[60]"
           >
-            <button onClick={() => setOpen(false)} className="absolute top-6 right-6 rtl:right-auto rtl:left-6 text-foreground" aria-label="Close menu">
-              <X size={24} />
-            </button>
-            <button
-              onClick={() => { setOpen(false); onBack(); }}
-              className="absolute top-6 left-6 rtl:left-auto rtl:right-6 flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-              aria-label={t('back')}
-            >
-              {isRtl ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
-              <span className="text-sm font-heading uppercase tracking-wider">{t('back')}</span>
-            </button>
-            {items.map((item) => (
+            {/* Dim background + frosted glass panel */}
+            <div className="absolute inset-0 bg-background/70 backdrop-blur-sm" />
+
+            <div className="relative mx-auto w-[92%] max-w-md rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md p-8 flex flex-col items-center justify-center gap-6">
               <button
-                key={item}
-                onClick={() => { setOpen(false); onNavigate(item); }}
-                className="text-2xl font-heading font-semibold text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
+                onClick={() => setOpen(false)}
+                className="absolute top-6 right-6 rtl:right-auto rtl:left-6 text-foreground"
+                aria-label="Close menu"
               >
-                {t(item)}
+                <X size={24} />
               </button>
-            ))}
+              <button
+                onClick={() => { setOpen(false); onBack(); }}
+                className="absolute top-6 left-6 rtl:left-auto rtl:right-6 flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                aria-label={t('back')}
+              >
+                {isRtl ? <ArrowRight size={20} /> : <ArrowLeft size={20} />}
+                <span className="text-sm font-heading uppercase tracking-wider">{t('back')}</span>
+              </button>
+              {items.map((item) => (
+                <button
+                  key={item}
+                  onClick={() => { setOpen(false); onNavigate(item); }}
+                  className="text-2xl font-heading font-semibold text-muted-foreground hover:text-primary transition-colors tracking-wider uppercase"
+                >
+                  {t(item)}
+                </button>
+              ))}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

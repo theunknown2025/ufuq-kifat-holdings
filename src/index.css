@@ -64,7 +64,8 @@
   }
 
   body {
-    @apply bg-background text-foreground overflow-hidden;
+    /* Allow normal page scrolling on mobile; only prevent horizontal overflow. */
+    @apply bg-background text-foreground overflow-x-hidden;
     font-family: var(--font-body);
   }
 

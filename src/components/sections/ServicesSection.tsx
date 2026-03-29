@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useLanguage } from '@/contexts/LanguageContext';
 import SectionPanel from '@/components/SectionPanel';
 import sectionBg from '@/assets/section-services.jpg';
-import { Compass, Building2, ClipboardList, HardHat, FileSearch } from 'lucide-react';
+import { Compass, Building2, ClipboardList, HardHat, FileSearch, Warehouse } from 'lucide-react';
 
 const services = [
   { icon: Compass, titleKey: 'engConsulting', descKey: 'engConsultingDesc' },
@@ -10,6 +10,7 @@ const services = [
   { icon: ClipboardList, titleKey: 'projMgmt', descKey: 'projMgmtDesc' },
   { icon: HardHat, titleKey: 'constSuper', descKey: 'constSuperDesc' },
   { icon: FileSearch, titleKey: 'techStudies', descKey: 'techStudiesDesc' },
+  { icon: Warehouse, titleKey: 'facilitiesMgmt', descKey: 'facilitiesMgmtDesc' },
 ];
 
 const ServicesSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate: (s: string) => void }) => {
