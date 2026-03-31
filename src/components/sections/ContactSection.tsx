@@ -6,6 +6,7 @@ import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const WHATSAPP_E164 = '447429007272';
 const WHATSAPP_DISPLAY = '+447429007272';
+const CONTACT_EMAIL = 'info@ufugkifatalmutahida.com';
 
 const ContactSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate: (s: string) => void }) => {
   const { t } = useLanguage();
@@ -47,7 +48,8 @@ const ContactSection = ({ onBack, onNavigate }: { onBack: () => void; onNavigate
               <div>
                 <h4 className="text-xs font-heading tracking-widest uppercase text-muted-foreground mb-1">{t('email')}</h4>
                 <p className="text-foreground">
-                  <a href="mailto:info@ufugkifatalmutahida.com" className="hover:text-primary transition-colors">
+                  <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-primary transition-colors">
+                    {CONTACT_EMAIL}
                   </a>
                 </p>
               </div>
